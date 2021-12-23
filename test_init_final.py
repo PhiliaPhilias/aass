@@ -1189,11 +1189,11 @@ class taskCog(commands.Cog):
 									bossMungFlag[i] = False
 									bossMungCnt[i] = 0
 									if bossData[i][2] == '0':
-										await self.bot.get_channel(channel).send(f'```자동 미입력 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] 삭제!```', tts=False)
-										print ('자동미입력 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
+										await self.bot.get_channel(channel).send(f'```자동 미입력 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] Delete!```', tts=False)
+										print ('자동미입력 횟수초과 <' + bossData[i][0] + ' Delete End>')
 									else:
-										await self.bot.get_channel(channel).send(f'```자동 멍처리 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] 삭제!```', tts=False)
-										print ('자동멍처리 횟수초과 <' + bossData[i][0] + ' 삭제완료>')
+										await self.bot.get_channel(channel).send(f'```자동 멍처리 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] delete!```', tts=False)
+										print ('자동멍처리 횟수초과 <' + bossData[i][0] + ' Delete End>')
 									#await dbSave()
 									
 								else:
@@ -1403,7 +1403,7 @@ class mainCog(commands.Cog):
 			command_list += ','.join(command[5]) + ' ※ 관리자만 실행 가능\n'     #!소환
 			command_list += ','.join(command[6]) + '\n'     #!불러오기
 			command_list += ','.join(command[7]) + '\n'     #!초기화
-			command_list += ','.join(command[8]) + '\n'     #!명치
+			command_list += ','.join(command[8]) + '\n'     #!!
 			command_list += ','.join(command[9]) + '\n'     #!재시작
 			command_list += ','.join(command[10]) + '\n'     #!미예약
 			command_list += ','.join(command[11]) + ' [인원] [금액]\n'     #!분배
@@ -1439,13 +1439,13 @@ class mainCog(commands.Cog):
 			command_list += ','.join(command[28]) + ' 사다리, 정산, 척살, 경주, 아이템\n'     #!채널설정
 			command_list += ','.join(command[42]) + ' 사다리, 정산, 척살, 경주, 아이템\n'     #!채널삭제
 			command_list += ','.join(command[34]) + ' ※ 관리자만 실행 가능\n\n'     #서버나가기
-			command_list += ','.join(command[22]) + '\n'     #보스탐
-			command_list += ','.join(command[23]) + '\n'     #!보스탐
-			command_list += '[보스명]kut 또는 [보스명]kut 0000, 00:00\n'  
-			command_list += '[보스명] kut 또는 [보스명] kut 0000, 00:00\n'   
+			command_list += ','.join(command[22]) + '\n'     #boss, Boss, b, B
+			command_list += ','.join(command[23]) + '\n'     #!Boss, !bods, !b, !B
+			command_list += '[보스명]cut 또는 [보스명]cut 0000, 00:00\n'  
+			command_list += '[보스명] cut 또는 [보스명] cut 0000, 00:00\n'   
 			command_list += '[보스명]pass 또는 [보스명]pass 0000, 00:00\n'     
 			command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
-			command_list += '[보스명]삭제\n'     
+			command_list += '[보스명]Delete\n'     
 			command_list += '[보스명]메모 [할말]\n'
 			embed = discord.Embed(
 					title = "----- 명령어 -----",
@@ -1454,7 +1454,7 @@ class mainCog(commands.Cog):
 					)
 			embed.add_field(
 					name="----- 추가기능 -----",
-					value= '```- [보스명]kut/pass/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능\n- [보스명]kut 명령어는 초성으로 입력가능합니다.\n  ex)' + bossData[0][0] + 'kut => ' + convertToInitialLetters(bossData[0][0] +'kut') + ', ' + bossData[0][0] + ' kut => ' + convertToInitialLetters(bossData[0][0] +' kut') + '```'
+					value= '```- [보스명]cut/pass/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능\n- [보스명]cut 명령어는 초성으로 입력가능합니다.\n  ex)' + bossData[0][0] + 'cut => ' + convertToInitialLetters(bossData[0][0] +'cut') + ', ' + bossData[0][0] + ' cut => ' + convertToInitialLetters(bossData[0][0] +' cut') + '```'
 					)
 			await ctx.send( embed=embed, tts=False)
 		else:
@@ -4039,7 +4039,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 				channel = basicSetting[7]
 				message = msg
 
-				for command_str in ["kut", "pass", "예상", "삭제", "메모", "카톡켬", "카톡끔"]:
+				for command_str in ["cut", "pass", "예상", "Delete", "메모", "카톡켬", "카톡끔"]:
 					if command_str in message.content:
 						tmp_msg : str = ""
 						for key, value in boss_nick.items():
@@ -4050,7 +4050,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 
 				for i in range(bossNum):
 					################ 보스 컷처리 ################ 
-					if message.content.startswith(bossData[i][0] +'kut') or message.content.startswith(bossData[i][0] +' kut') :
+					if message.content.startswith(bossData[i][0] +'cut') or message.content.startswith(bossData[i][0] +' cut') :
 						if hello.find('  ') != -1 :
 							bossData[i][6] = hello[hello.find('  ')+2:]
 							hello = hello[:hello.find('  ')]
@@ -4058,7 +4058,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 							bossData[i][6] = ''
 
 						curr_now = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
-						tmp_msg = bossData[i][0] +'kut'
+						tmp_msg = bossData[i][0] +'cut'
 						if len(hello) > len(tmp_msg) + 3 :
 							if hello.find(':') != -1 :
 								chkpos = hello.find(':')
@@ -4246,7 +4246,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 							
 					################ 보스타임 삭제 ################
 						
-					if message.content == bossData[i][0] +'삭제' or message.content == bossData[i][0] +' 삭제':
+					if message.content == bossData[i][0] +'Delete' or message.content == bossData[i][0] +' Delete':
 						bossTime[i] = datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0]))
 						tmp_bossTime[i] =  datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0]))
 						bossTimeString[i] = '99:99:99'
@@ -4257,9 +4257,9 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 						bossFlag0[i] = False
 						bossMungFlag[i] = False
 						bossMungCnt[i] = 0
-						await self.get_channel(channel).send('<' + bossData[i][0] + ' 삭제완료>', tts=False)
+						await self.get_channel(channel).send('<' + bossData[i][0] + ' Delete End>', tts=False)
 						await dbSave()
-						print ('<' + bossData[i][0] + ' 삭제완료>')
+						print ('<' + bossData[i][0] + ' Delete End>')
 					
 					################ 보스별 메모 ################ 
 
