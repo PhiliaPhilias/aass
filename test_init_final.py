@@ -1189,11 +1189,11 @@ class taskCog(commands.Cog):
 									bossMungFlag[i] = False
 									bossMungCnt[i] = 0
 									if bossData[i][2] == '0':
-										await self.bot.get_channel(channel).send(f'```자동 미입력 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] Delete!```', tts=False)
-										print ('자동미입력 횟수초과 <' + bossData[i][0] + ' Delete End>')
+										await self.bot.get_channel(channel).send(f'```auto pass over {basicSetting[17]}회 초과! [{bossData[i][0]}] delete!```', tts=False)
+										print ('auto death over <' + bossData[i][0] + ' delete End>')
 									else:
-										await self.bot.get_channel(channel).send(f'```자동 멍처리 횟수 {basicSetting[17]}회 초과! [{bossData[i][0]}] delete!```', tts=False)
-										print ('자동멍처리 횟수초과 <' + bossData[i][0] + ' Delete End>')
+										await self.bot.get_channel(channel).send(f'```auto pass over {basicSetting[17]}회 초과! [{bossData[i][0]}] delete!```', tts=False)
+										print ('auto pass over <' + bossData[i][0] + ' delete End>')
 									#await dbSave()
 									
 								else:
@@ -1202,7 +1202,7 @@ class taskCog(commands.Cog):
 										bossFlag[i] = False
 										bossFlag0[i] = False
 										bossMungFlag[i] = False
-										bossMungCnt[i] = bossMungCnt[i] + 1
+										bossMungCnt[i]= bossMungCnt[i] + 1
 										tmp_bossTime[i] = bossTime[i] = nextTime = tmp_bossTime[i]+datetime.timedelta(hours=int(bossData[i][1]), minutes=int(bossData[i][5]))
 										tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
@@ -1445,7 +1445,7 @@ class mainCog(commands.Cog):
 			command_list += '[보스명] cut 또는 [보스명] cut 0000, 00:00\n'   
 			command_list += '[보스명]pass 또는 [보스명]pass 0000, 00:00\n'     
 			command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
-			command_list += '[보스명]Delete\n'     
+			command_list += '[보스명]delete\n'     
 			command_list += '[보스명]메모 [할말]\n'
 			embed = discord.Embed(
 					title = "----- 명령어 -----",
@@ -4039,7 +4039,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 				channel = basicSetting[7]
 				message = msg
 
-				for command_str in ["cut", "pass", "예상", "Delete", "메모", "카톡켬", "카톡끔"]:
+				for command_str in ["cut", "pass", "예상", "delete", "메모", "카톡켬", "카톡끔"]:
 					if command_str in message.content:
 						tmp_msg : str = ""
 						for key, value in boss_nick.items():
@@ -4246,7 +4246,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 							
 					################ 보스타임 삭제 ################
 						
-					if message.content == bossData[i][0] +'Delete' or message.content == bossData[i][0] +' Delete':
+					if message.content == bossData[i][0] +'delete' or message.content == bossData[i][0] +' delete':
 						bossTime[i] = datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0]))
 						tmp_bossTime[i] =  datetime.datetime.now()+datetime.timedelta(days=365, hours = int(basicSetting[0]))
 						bossTimeString[i] = '99:99:99'
@@ -4257,9 +4257,9 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 						bossFlag0[i] = False
 						bossMungFlag[i] = False
 						bossMungCnt[i] = 0
-						await self.get_channel(channel).send('<' + bossData[i][0] + ' Delete End>', tts=False)
+						await self.get_channel(channel).send('<' + bossData[i][0] + ' delete End>', tts=False)
 						await dbSave()
-						print ('<' + bossData[i][0] + ' Delete End>')
+						print ('<' + bossData[i][0] + ' delete End>')
 					
 					################ 보스별 메모 ################ 
 
