@@ -1208,7 +1208,7 @@ class taskCog(commands.Cog):
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
 										await self.bot.get_channel(channel).send("```" +  bossData[i][0] + ' no Check!```', tts=False)
 										embed = discord.Embed(
-											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+											description= '```next ' + bossData[i][0] + ' ' + bossTimeString[i] + '.```',
 											color=0xff0000
 											)
 										await self.bot.get_channel(channel).send(embed=embed, tts=False)
@@ -1228,7 +1228,7 @@ class taskCog(commands.Cog):
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
 										await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' auto pass.```')
 										embed = discord.Embed(
-											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+											description= '```next ' + bossData[i][0] + ' ' + bossTimeString[i] + '.```',
 											color=0xff0000
 											)
 										await self.bot.get_channel(channel).send(embed=embed, tts=False)
@@ -4107,7 +4107,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 							bossFlag0[i] = True
 
 						embed = discord.Embed(
-								description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+								description= '```next ' + bossData[i][0] + ' ' + bossTimeString[i] + '.```',
 								color=0xff0000
 								)
 						await self.get_channel(channel).send(embed=embed, tts=False)
@@ -4161,7 +4161,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 								bossFlag0[i] = True
 
 							embed = discord.Embed(
-									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+									description= '```next ' + bossData[i][0] + ' ' + bossTimeString[i] + '.```',
 									color=0xff0000
 									)
 							await self.get_channel(channel).send(embed=embed, tts=False)
@@ -4185,7 +4185,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 									bossFlag0[i] = True
 
 								embed = discord.Embed(
-										description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+										description= '```next ' + bossData[i][0] + ' ' + bossTimeString[i] + '.```',
 										color=0xff0000
 										)
 								await self.get_channel(channel).send(embed=embed, tts=False)
@@ -4237,7 +4237,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 								bossFlag0[i] = True		
 									
 							embed = discord.Embed(
-									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+									description= '```next ' + bossData[i][0] + ' ' + bossTimeString[i] + '.```',
 									color=0xff0000
 									)
 							await self.get_channel(channel).send(embed=embed, tts=False)
