@@ -1813,7 +1813,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 미예약 보스 -----",
+						title = "----- 미예약 보스 ・未把握 -----",
 						description= tmp_boss_information[0],
 						color=0x0000ff
 						)
@@ -1828,7 +1828,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-					title = "----- 미예약 보스 -----",
+					title = "----- 미예약 보스 ・未把握 -----",
 					description= tmp_boss_information[0],
 					color=0x0000ff
 					)
