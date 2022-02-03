@@ -616,7 +616,7 @@ async def dbSave():
 	
 	datelist = list(set(datelist1))
 
-	information1 = '----- 보스탐 정보 -----\n'
+	information1 = '-----  보스탐 정보 ・BOSS -----\n'
 	for timestring in sorted(datelist):
 		for i in range(bossNum):
 			if timestring == bossTime[i]:
@@ -2447,12 +2447,12 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 보스탐 정보 -----",
+						title = "----- 보스탐 정보 ・BOSS -----",
 						description= boss_information[0],
 						color=0x0000ff
 						)
 				embed.add_field(
-						name="----- 미예약 보스 -----",
+						name="----- 미예약 보스 ・未把握 -----",
 						value= tmp_boss_information[0],
 						inline = False
 						)				
@@ -2465,7 +2465,7 @@ class mainCog(commands.Cog):
 					boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 보스탐 정보 -----",
+						title = "----- 보스탐 정보 ・BOSS -----",
 						description= boss_information[0],
 						color=0x0000ff
 						)
@@ -2492,7 +2492,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-					title = "----- 미예약 보스 -----",
+					title = "----- 미예약 보스 ・未把握 -----",
 					description= tmp_boss_information[0],
 					color=0x0000ff
 					)
@@ -2649,7 +2649,7 @@ class mainCog(commands.Cog):
 				boss_information[0] = '``` ```'
 
 			embed = discord.Embed(
-					title = "----- 보스탐 정보 -----",
+					title = "----- 보스탐 정보 ・BOSS -----",
 					description= boss_information[0],
 					color=0x0000ff
 					)
@@ -2677,7 +2677,7 @@ class mainCog(commands.Cog):
 				tmp_boss_information[0] = '``` ```'
 
 			embed = discord.Embed(
-				title = "----- 미예약 보스 -----",
+				title = "----- 미예약 보스 ・未把握 -----",
 				description= tmp_boss_information[0],
 				color=0x0000ff
 				)
