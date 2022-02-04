@@ -1066,7 +1066,7 @@ class taskCog(commands.Cog):
 					if basicSetting[3] != '0' and fixed_bossFlag0[i] == False:
 						if fixed_bossTime[i] <= priv0 and fixed_bossTime[i] > priv:
 							fixed_bossFlag0[i] = True
-							await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
+							await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '分 前 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
 							try:
 								if basicSetting[21] == "1":
 									await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '알림1.mp3')
@@ -1079,7 +1079,7 @@ class taskCog(commands.Cog):
 					if basicSetting[1] != '0' and fixed_bossFlag[i] == False:
 						if fixed_bossTime[i] <= priv and fixed_bossTime[i] > now and fixed_bossFlag0[i] == True :
 							fixed_bossFlag[i] = True
-							await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
+							await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '分 前 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
 							try:
 								if basicSetting[21] == "1":
 									await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '알림.mp3')
@@ -1115,9 +1115,9 @@ class taskCog(commands.Cog):
 						if bossTime[i] <= priv0 and bossTime[i] > priv:
 							bossFlag0[i] = True
 							if bossData[i][6] != '' :
-								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '分 前 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
 							else :
-								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '分 前 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
 							try:
 								if basicSetting[21] == "1":
 									await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림1.mp3')
@@ -1131,9 +1131,9 @@ class taskCog(commands.Cog):
 						if bossTime[i] <= priv and bossTime[i] > now and bossFlag0[i] == True:
 							bossFlag[i] = True
 							if bossData[i][6] != '' :
-								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '分 前 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
 							else :
-								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+								await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '分 前 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
 							try:
 								if basicSetting[21] == "1":
 									await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림.mp3')
@@ -1479,8 +1479,8 @@ class mainCog(commands.Cog):
 				setting_val += '경주채널 : ' + self.bot.get_channel(int(basicSetting[19])).name + '\n'
 			if basicSetting[20] != "" :
 				setting_val += '아이템채널 : ' + self.bot.get_channel(int(basicSetting[20])).name + '\n'
-			setting_val += '보스젠알림시간1 : ' + basicSetting[1] + ' 분 전\n'
-			setting_val += '보스젠알림시간2 : ' + basicSetting[3] + ' 분 전\n'
+			setting_val += '보스젠알림시간1 : ' + basicSetting[1] + ' 分 前\n'
+			setting_val += '보스젠알림시간2 : ' + basicSetting[3] + ' 分 前\n'
 			setting_val += '보스멍확인시간1 : ' + basicSetting[2] + ' 분 후\n'
 			setting_val += '보스멍확인시간2 : ' + basicSetting[22] + ' 분 후\n'
 			if basicSetting[21] == "0":
