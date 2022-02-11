@@ -4050,7 +4050,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 
 				for i in range(bossNum):
 					################ 보스 컷처리 ################ 
-					if message.content.startswith(bossData[i][0]) :
+					if message.content.startswith(bossData[i][0] +'cut') or message.content.startswith(bossData[i][0] +' cut') :
 						if hello.find('  ') != -1 :
 							bossData[i][6] = hello[hello.find('  ')+2:]
 							hello = hello[:hello.find('  ')]
@@ -4058,7 +4058,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 							bossData[i][6] = ''
 
 						curr_now = datetime.datetime.now() + datetime.timedelta(hours = int(basicSetting[0]))
-						tmp_msg = bossData[i][0]
+						tmp_msg = bossData[i][0] +'cut'
 						if len(hello) > len(tmp_msg) + 3 :
 							if hello.find(':') != -1 :
 								chkpos = hello.find(':')
